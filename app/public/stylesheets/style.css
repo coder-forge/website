@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+#cardsContainer .mix{
+  display: none;
+  width: 120px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 50px 15px;
+  margin: 10px 15px;
+}
