@@ -1,0 +1,22 @@
+{
+  "name": "coderforge-website",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Daithi Coombes <webeire@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/coder-forge/website",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
