@@ -1,15 +1,9 @@
 FROM node
 MAINTAINER webeire@gmail.com
 
-RUN mkdir /src \
-  && mkdir /src/app \
-  && mkdir /src/bin
-
-COPY ./app /src/app
-COPY ./bin /src/bin
-COPY ./package.json /src/package.json
-
+RUN mkdir /src
 WORKDIR /src
+ADD . /src
 
 RUN npm install
 
