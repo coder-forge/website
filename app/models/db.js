@@ -3,8 +3,9 @@
 
 // Bring Mongoose into the app
 var mongoose = require( 'mongoose' )
+  ,config = require('../../config')()
 
-var dbURI = 'mongodb://localhost/cfWebsite'
+var dbURI = 'mongodb://'+config.mongo.host+':'+config.mongo.port+'/cfWebsite'
 
 // Create the database connection
 mongoose.connect(dbURI)
