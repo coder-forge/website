@@ -2,24 +2,24 @@ extends layout
 
 block content
   .content
-    h1= title
-    p Welcome to #{title} - please see our temporary site here: <a href="http://daithi-coombes.github.io/coder-forge/">http://daithi-coombes.github.io/coder-forge/</a>
+    h1 Welcome
+    p ... to our post temporary pre workable site, please see our temporary site here: <a href="http://daithi-coombes.github.io/coder-forge/">http://daithi-coombes.github.io/coder-forge/</a>
     
-    div#cardsContainer.
-      <a href="#" class="btn btn-default filter" data-filter="all">All</a>
-      <a href="#" class="btn btn-default filter" data-filter=".languages">Languages</a>
-      <a href="#" class="btn btn-default filter" data-filter=".ides">Community</a>
-      <a href="#" class="btn btn-default filter" data-filter=".ml">Machine Learning</a>
-      <a href="#" class="btn btn-default filter" data-filter=".ides">IDE's</a>
-      <a href="#" class="btn btn-default filter" data-filter=".browser">Browsers</a>
-      <a href="#" class="btn btn-default filter" data-filter=".node">Node</a>
-      <a href="#" class="btn btn-default filter" data-filter=".framework">Frameworks</a>
-      <a href="#" class="btn btn-default filter" data-filter=".tool">Tools</a>
-      <a href="#" class="btn btn-default filter" data-filter=".book">Books</a>
-      <a href="#" class="btn btn-default filter" data-filter=".web">Web Dev</a>
-      <br>
-      <div class="cards" id="cards">
-        <div class="mix languages javascript node">
+    div#cardsContainer
+      a.btn.btn-default.filter(href="#", data-filter="all") All
+      a.btn.btn-default.filter(href="#", data-filter=".languages") Languages
+      a.btn.btn-default.filter(href="#", data-filter=".ides") Community
+      a.btn.btn-default.filter(href="#", data-filter=".ml") Machine Learning
+      a.btn.btn-default.filter(href="#", data-filter=".ides") IDE's
+      a.btn.btn-default.filter(href="#", data-filter=".browser") Browsers
+      a.btn.btn-default.filter(href="#", data-filter=".node") Node
+      a.btn.btn-default.filter(href="#", data-filter=".framework") Frameworks
+      a.btn.btn-default.filter(href="#", data-filter=".tool") Tools
+      a.btn.btn-default.filter(href="#", data-filter=".book") Books
+      a.btn.btn-default.filter(href="#", data-filter=".web") Web Dev
+
+      div#cards.cards
+        .mix.languages.javascript.node.
           <a href="https://nodejs.org/en/" target="_blank">
             <img src="/coder-forge/assets/themes/coder-forge//coder-forge/images/icon-nodejs-100x43.png">
             NodeJS
@@ -27,23 +27,19 @@ block content
           <p>
             Allows JavaScript to be used on the server
           </p>
-        </div>
-        <div class="mix community">
+        .mix.community.
           <a href="http://coderscrowd.com/">coderscrowd</a>
           <p>Community of coders, sharing, helping and learning</p>
-        </div>
-        <div class="mix community ml">
+        .mix.community.ml.
           <a href="https://www.kaggle.com">kaggle</a>
           <p>Community of data scientists based on learning and sharing through
           competitions and tutorials.</p>
-        </div>
-        <div class="mix ides tool">
+        .mix.ides.tool.
           <a href="https://atom.io/">Atom</a>
           <p>
             Open source editor, handles nearly all languages. Recommended.
           </p>
-        </div>
-        <div class="mix browser tool">
+        .mix.browser.tool.
           <a href="https://www.mozilla.org/en-GB/firefox/developer/">
             <img src="/coder-forge/assets/themes/coder-forge//coder-forge/images/icon-firefox-85x84.png">
             Firefox Developer
@@ -52,21 +48,18 @@ block content
             Open source browser build for developers. Includes some interesting tools,
             but can be buggy at time of writing. Recommended.
           </p>
-        </div>
-        <div class="mix browser tool">
+        .mix.browser.tool.
           <a href="https://www.chromium.org/Home">Chromium</a>
           <p>
             Open source port of Google Chrome. May be difficult to install on
             windows. Recommended.
           </p>
-        </div>
-        <div class="mix framework node">
+        .mix.framework.node.
           <a href="https://www.meteor.com">MeteorJS</a>
           <p>
             Framework based on reactive data. Very interesting.
           </p>
-        </div>
-        <div class="mix tool">
+        .mix.tool.
           <a href="https://www.docker.com">
             <img src="/coder-forge/assets/themes/coder-forge//coder-forge/images/icon-docker-100x89.png">
             Docker
@@ -75,33 +68,26 @@ block content
             A must have tool. Allows provisioning and running one OS on another using
             a technology known as containerisation.
           </p>
-        </div>
-        <div class="mix book web">
+        .mix.book.web.
           <a href="http://www.designingfortheweb.co.uk/">Designing For the Web - free ebook</a>
           <p>
             Excellent book for beginners to web development.
           </p>
-        </div>
-        <div class="mix book">
+        .mix.book.
           <a href="http://lifehacker.com/5744113/learn-to-code-the-full-beginners-guide">Learn to code the full beginners guide</a>
           <p>
             The name says it all. Series of quick tutorials on the basics of coding.
           </p>
-        </div>
-        <div class="mix community">
+        .mix.community.
           <a href="http://www.codecademy.com/learn">codecademy</a>
           <p>
             Probably the best online resource for learning a new language, for
             beginners and pro's. Highly recommended.
           </p>
-        </div>
-        <div class="mix community node tools">
+        .mix.community.node.tools.
           <a href="http://nodeschool.io" style="background-color: #FFE51F">
             <img src="/coder-forge/assets/themes/coder-forge//coder-forge/images/icon-nodeschool.svg">
             NODESCHOOL
           <p>
             "Open source workshops that teach web software skills. Do them on your own or at a workshop nearby" - nodeschool.io
           </p>
-
-        </div>
-      </div>

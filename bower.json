@@ -18,6 +18,7 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "mixitup": "^2.1.11"
+    "mixitup": "^2.1.11",
+    "jquery": "^2.2.1"
   }
 }
