@@ -4,7 +4,8 @@ var express = require('express')
   ,logger = require('morgan')
   ,cookieParser = require('cookie-parser')
   ,bodyParser = require('body-parser')
-  ,routes = require('./routes/root')
+  ,routesRoot = require('./routes/root')
+  ,routesAdmin = require('./routes/admin')
   ,app = express()
 
 // view engine setup
@@ -19,7 +20,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/', routes)
+app.use('/', routesRoot)
+app.use('/admin', routesAdmin)
 
 // load mongo
 require('./models/db.js')
