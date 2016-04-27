@@ -3,10 +3,26 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
 
-  {{> hello}}
-  {{> info}}
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Welcome to Meteor!</h1>
+      </div>
+    </div>
+
+    <div class="panel panel-defualt">
+      <div class="panel-title">
+        {{> hello}}
+      </div>
+      <div class="panel-body">
+        {{> info}}
+      </div>
+    </div>
+
+  </div>
+
 </body>
 
 <template name="hello">
