@@ -20,15 +20,26 @@ describe('tools controller', function(){
 
   it('Should return view', function(done){
 
-    var req = {},
-      res = {
+    var res = {
         render: function(template){}
       }
-
     spyOn(res, 'render')
 
-    toolsLib.view(req, res)
+    toolsLib.view({}, res)
     expect(res.render).toHaveBeenCalledWith('admin/index')
     done()
+  })
+
+  it('Should upsert a document', function(done){
+
+    var req = {
+      body: {
+        title: 'foobar',
+        url: 'http://foobar/',
+        description: 'under test'
+      }
+    }
+
+    
   })
 })
