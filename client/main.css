@@ -1,1 +1,6 @@
-
+body {
+  padding-top: 70px;
+}
+.container.main{
+  padding-left: 200px;
+}
