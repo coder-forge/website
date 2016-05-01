@@ -4,3 +4,6 @@ body {
 .container.main{
   padding-left: 200px;
 }
+.navbar-brand{
+  padding: 0 !important;
+}
