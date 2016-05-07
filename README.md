@@ -6,16 +6,15 @@ License: [MIT](https://opensource.org/licenses/MIT)
 
 ### Dependencies
 
-Install the following:
+To run the site locally, you will need to install the following:
 
 1. [nodeJS](https://nodejs.org/en/download/)
 2. [meteorJS](https://www.meteor.com/install)
 
-### Installing the website
+### Cloning the website
 ```bash
 git clone https://github.com/coder-forge/website.git
 cd website/
-meteor install
 ```
 
 ### Running the website
