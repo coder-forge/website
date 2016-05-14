@@ -1,32 +1,44 @@
-This is the website for the Coder Forge project.
+# Coder Forge Website
+Beta version. To view the live site goto [https://coder-forge.github.io](https://coder-forge.github.io)
 
-License: [MIT](https://opensource.org/licenses/MIT)
+This beta version can be viewed at: [http://164.132.58.15:3000](http://164.132.58.15:3000)
+
+You can contact us at [mailto:coderforge.dublin@gmail.com](coderforge.dublin@gmail.com)
 
 # Usage
 
-### Dependencies
+Feel free to download this code and help to work on the site. You can view and
+report issues here: [https://github.com/coder-forge/website/issues](https://github.com/coder-forge/website/issues)
 
-To run the site locally, you will need to install the following:
+## Docker
 
-1. [nodeJS](https://nodejs.org/en/download/)
-2. [meteorJS](https://www.meteor.com/install)
-
-### Cloning the website
+The preferred method is to use docker. Instructions for installing docker can be
+found [here](https://docs.docker.com/engine/installation/). Once docker is
+installed you can run the site locally with the following commands:
 ```bash
-git clone https://github.com/coder-forge/website.git
-cd website/
+git clone https://github.com/coder-forge/website
+cd website
+docker-compose up
 ```
 
-### Running the website
-From inside the repo cloned above:
-
+Or you can run the image from the Coder Forge account at [docker hub](https://hub.docker.com/r/coderforge/website/)
 ```bash
-meteor run
+docker pull coderforge/website
+docker run coderforge/website
 ```
 
-# Contributing
+## Manually
 
-1. Fork this repo.
-2. clone your fork locally.
-3. commit your changes to your fork.
-4. click the 'new pull request' button in your forks github.com page.
+The site can be run as a MeteorJS app without Docker. Installation instructions for MeteorJS
+can be found [here](https://www.meteor.com/install)
+```bash
+git clone https://github.com/coder-forge/website
+cd website/app
+meteor
+```
+
+# Status
+
+The build status for the website can be found on CircleCI [https://circleci.com/gh/coder-forge/website](https://circleci.com/gh/coder-forge/website)
+
+License: [MIT](https://opensource.org/licenses/MIT)
