@@ -6,7 +6,7 @@ import './main.html';
 Template.header.events({
 
   // mobile menu button, toggle sidebar
-  'click #menu-toggle': function(){
+  'click #menu-toggle': () => {
     $("#wrapper").toggleClass("toggled");
   }
 });
