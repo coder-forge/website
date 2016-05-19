@@ -20,9 +20,11 @@ COPY scripts/start.sh /scripts
 RUN chmod +x /scripts/start.sh
 
 RUN mkdir /app
-COPY app/* /app/
-WORKDIR /app
 VOLUME ["/app"]
+
+RUN git clone https://coder-forge.github.com/website /app
+
+WORKDIR /app
 
 ###
 #
