@@ -1,4 +1,4 @@
 #!/bin/sh
 
-cd /app
+cd /app/app
 meteor run

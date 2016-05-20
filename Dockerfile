@@ -22,9 +22,9 @@ RUN chmod +x /scripts/start.sh
 RUN mkdir /app
 VOLUME ["/app"]
 
-RUN git clone https://coder-forge.github.com/website /app
+RUN git clone https://github.com/coder-forge/website /app
 
-WORKDIR /app
+WORKDIR /app/app
 
 ###
 #
