@@ -1,11 +1,31 @@
-FROM ubuntu:16.04
+FROM node
 
-RUN apt-get update -y
-RUN apt-get install -y curl bzip2 build-essential nodejs npm git
+MAINTAINER Daithi Coombes <webeire@gmail.com>
 
-COPY scripts /scripts
-RUN bash /scripts/install_meteor.sh
-RUN bash /scripts/install_website.sh
+RUN apt-get update && \
+  apt-get -y upgrade
 
-EXPOSE 3000
-ENTRYPOINT bash /scripts/start.sh
+RUN apt-get -y install git
+
+RUN curl https://install.meteor.com/ | sh
+
+# Set the locale
+RUN apt-get update -qq && apt-get install -y locales -qq && locale-gen en_US.UTF-8 en_us && dpkg-reconfigure locales && dpkg-reconfigure locales && locale-gen C.UTF-8 && /usr/sbin/update-locale LANG=C.UTF-8
+ENV LANG C.UTF-8
+ENV LANGUAGE C.UTF-8
+ENV LC_ALL C.UTF-8
+
+RUN mkdir /scripts
+COPY scripts/start.sh /scripts
+RUN chmod +x /scripts/start.sh
+
+RUN mkdir /app
+COPY app/* /app/
+WORKDIR /app
+
+###
+#
+# 1. Volume of a default app
+# 2. Run meteor as cmd
+
+CMD ["/scripts/start.sh"]
