@@ -1,20 +1,19 @@
-# as per https://github.com/meteorhacks/meteord
-FROM debian:wheezy
-MAINTAINER MeteorHacks Pvt Ltd.
+FROM node
 
-ENV METEORD_DIR /opt/meteord
-COPY scripts $METEORD_DIR
-COPY app /app
-VOLUME ["/app"]
+RUN apt-get update -y
+RUN apt-get install -y curl bzip2 build-essential git
 
-#RUN bash $METEORD_DIR/init.sh
-RUN bash $METEORD_DIR/lib/install_base.sh
-RUN bash $METEORD_DIR/lib/install_node.sh
-RUN bash $METEORD_DIR/lib/install_meteor.sh
-RUN bash $METEORD_DIR/lib/cleanup.sh
+# Set the locale
+RUN apt-get update -qq && apt-get install -y locales -qq && locale-gen en_US.UTF-8 en_us && dpkg-reconfigure locales && dpkg-reconfigure locales && locale-gen C.UTF-8 && /usr/sbin/update-locale LANG=C.UTF-8
+ENV LANG C.UTF-8
+ENV LANGUAGE C.UTF-8
+ENV LC_ALL C.UTF-8
 
-RUN bash $METEORD_DIR/install_website.sh
+RUN curl -sL https://install.meteor.com | sed s/--progress-bar/-sL/g | /bin/sh
+
+COPY scripts /scripts
+RUN bash /scripts/install_website.sh
+
 
 EXPOSE 3000
-#ENTRYPOINT bash $METEORD_DIR/run_app.sh
-ENTRYPOINT bash $METEORD_DIR/start.sh
+ENTRYPOINT bash /scripts/start.sh
