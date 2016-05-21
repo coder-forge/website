@@ -13,7 +13,7 @@ RUN bash $METEORD_DIR/lib/install_node.sh
 RUN bash $METEORD_DIR/lib/install_meteor.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
 
-RUN bash scripts/install_website.sh
+RUN bash /scripts/install_website.sh
 
 EXPOSE 3000
 #ENTRYPOINT bash $METEORD_DIR/run_app.sh
