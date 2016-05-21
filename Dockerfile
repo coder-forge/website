@@ -9,9 +9,8 @@ ENV LANG C.UTF-8
 ENV LANGUAGE C.UTF-8
 ENV LC_ALL C.UTF-8
 
-RUN curl -sL https://install.meteor.com | sed s/--progress-bar/-sL/g | /bin/sh
-
 COPY scripts /scripts
+RUN bash /scripts/install_meteor.sh
 RUN bash /scripts/install_website.sh
 
 
