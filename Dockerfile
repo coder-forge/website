@@ -13,6 +13,6 @@ RUN bash $METEORD_DIR/lib/install_node.sh
 RUN bash $METEORD_DIR/lib/install_meteor.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
 
-EXPOSE 80
+EXPOSE 3000
 #ENTRYPOINT bash $METEORD_DIR/run_app.sh
 ENTRYPOINT bash $METEORD_DIR/start.sh
