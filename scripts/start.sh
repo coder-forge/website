@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/bin/bash
+set -e
 
-cd /app/app
+mkdir /coder-forge
+git clone https://github.com/coder-forge/website.git /coder-forge
+cd /coder-forge/app
 meteor run

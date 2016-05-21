@@ -1,35 +1,18 @@
-FROM node
+# as per https://github.com/meteorhacks/meteord
+FROM debian:wheezy
+MAINTAINER MeteorHacks Pvt Ltd.
 
-MAINTAINER Daithi Coombes <webeire@gmail.com>
+ENV METEORD_DIR /opt/meteord
+COPY scripts $METEORD_DIR
+COPY app /app
+VOLUME ["/app"]
 
-RUN apt-get update && \
-  apt-get -y upgrade
+#RUN bash $METEORD_DIR/init.sh
+RUN bash $METEORD_DIR/lib/install_base.sh
+RUN bash $METEORD_DIR/lib/install_node.sh
+RUN bash $METEORD_DIR/lib/install_meteor.sh
+RUN bash $METEORD_DIR/lib/cleanup.sh
 
-RUN apt-get -y install git
-
-RUN mkdir /scripts
-RUN wget "https://install.meteor.com/" -O /scripts/installMeteor.sh
-RUN chmod +x /scripts/installMeteor.sh
-RUN /scripts/installMeteor.sh
-
-# Set the locale
-RUN apt-get update -qq && apt-get install -y locales -qq && locale-gen en_US.UTF-8 en_us && dpkg-reconfigure locales && dpkg-reconfigure locales && locale-gen C.UTF-8 && /usr/sbin/update-locale LANG=C.UTF-8
-ENV LANG C.UTF-8
-ENV LANGUAGE C.UTF-8
-ENV LC_ALL C.UTF-8
-
-COPY scripts/start.sh /scripts
-RUN chmod +x /scripts/start.sh
-
-RUN mkdir /app
-RUN git clone https://github.com/coder-forge/website.git /app
-VOLUME /app
-
-EXPOSE 3000 3000
-
-###
-#
-# 1. Volume of a default app
-# 2. Run meteor as cmd
-
-CMD ["/scripts/start.sh"]
+EXPOSE 80
+#ENTRYPOINT bash $METEORD_DIR/run_app.sh
+ENTRYPOINT bash $METEORD_DIR/start.sh
