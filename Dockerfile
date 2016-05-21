@@ -1,6 +1,7 @@
 FROM node
 
 RUN apt-get update -y
+RUN apt-get upgrade -y
 RUN apt-get install -y curl bzip2 build-essential git
 
 # Set the locale
