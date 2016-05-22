@@ -39,8 +39,27 @@ FlowRouter.route('/forges/:forge', {
   }
 });
 
-FlowRouter.route('/dashboard', {
+dashboard = FlowRouter.group({
+  'name': 'dashboard',
+  'prefix': '/dashboard'
+});
+dashboard.route('/', {
   action: ()=>{
-    BlazeLayout.render("adminLayout", {content: "adminHome"});
+    triggersEnter: [AccountsTemplates.ensureSignedIn],
+    BlazeLayout.render('adminLayout', {content: "adminHome"});
   }
+});
+
+AccountsTemplates.configureRoute('signIn', {
+  layoutType: 'blaze',
+  name: 'signin',
+  path: '/login',
+  template: 'mainLayout',
+  layoutTemplate: 'mainLayout',
+  layoutRegions: {
+    content: 'login',
+    nav: 'customNav',
+    footer: 'customFooter'
+  },
+  contentRegion: 'login'
 });

@@ -25,3 +25,4 @@ kadira:flow-router
 kadira:blaze-layout
 accounts-ui
 accounts-password
+useraccounts:flow-routing

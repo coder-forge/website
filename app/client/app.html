@@ -58,8 +58,11 @@
 
     <main>
       <div id="wrapper">
-        <div id="loginButtons">
-          {{> loginButtons}}
+        <div id="sidebar-wrapper">
+          {{> adminSidebar }}
+        </div>
+        <div id="page-content-wrapper">
+          {{>Template.dynamic template=content}}
         </div>
       </div>
     </main>
