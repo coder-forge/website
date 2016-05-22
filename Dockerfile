@@ -1,4 +1,4 @@
-FROM ubuntu:16:04
+FROM ubuntu
 
 RUN mkdir /home/meteorapp
 WORKDIR /home/meteorapp
