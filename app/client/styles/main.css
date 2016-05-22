@@ -144,3 +144,6 @@ body {
         width: auto;
     }
 }
+#loginButtons{
+  height: 300px;
+}
