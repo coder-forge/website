@@ -12,13 +12,16 @@ RUN apt-get install curl -y \
   && (curl https://install.meteor.com/ | sh) \
 
   #no longer need curl
-  && apt-get --purge autoremove curl -y
+  && apt-get --purge autoremove -y
 
-RUN bash /home/meteorapp/scripts/install_node.sh
-RUN bash /home/meteorapp/scripts/install_website.sh
+RUN apt-get install git -y
+ADD ./scripts /scripts
+RUN bash /scripts/set_locales.sh
+RUN bash /scripts/install_node.sh
+RUN bash /scripts/install_website.sh
 
 EXPOSE 80
 ENV PORT 80
 
 #CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]
-ENTRYPOINT bash /meteorapp/scripts/start.sh
+ENTRYPOINT bash /scripts/start.sh
