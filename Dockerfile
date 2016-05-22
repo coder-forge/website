@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:16:04
 
 RUN mkdir /home/meteorapp
 WORKDIR /home/meteorapp
@@ -16,7 +16,10 @@ RUN apt-get install curl -y \
 
 RUN npm install -g forever
 
+RUN bash /meteorapp/scripts/install_website.sh
+
 EXPOSE 80
 ENV PORT 80
 
-CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]
+#CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]
+ENTRYPOINT bash /meteorapp/scripts/start.sh
