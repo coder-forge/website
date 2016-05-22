@@ -18,11 +18,11 @@ RUN apt-get install git -y
 ADD ./scripts /scripts
 RUN bash /scripts/set_locales.sh
 RUN bash /scripts/install_node.sh
-RUN bash /scripts/install_website.sh
 
 EXPOSE 3000
 ENV PORT 3000
 VOLUME ["/coder-forge"]
+RUN bash /scripts/install_website.sh
 
 #CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]
 ENTRYPOINT bash /scripts/start.sh
