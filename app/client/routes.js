@@ -1,6 +1,6 @@
 FlowRouter.route('/', {
   action: ()=>{
-    BlazeLayout.render("mainLayout", {content: "blogHome"});
+    BlazeLayout.render("mainLayout", {content: "home"});
   }
 });
 FlowRouter.route('/attend', {
@@ -28,18 +28,13 @@ FlowRouter.route('/competitions', {
     BlazeLayout.render("mainLayout", {content: "competitions"});
   }
 });
-
-routerForge = FlowRouter.group('/forges', {
-  prefix: '/forges',
-  name: 'forges'
-});
-routerForge.route('/', {
+FlowRouter.route('/forges', {
   action: ()=>{
     BlazeLayout.render("mainLayout", {content: "forges"});
   }
 });
-routerForge.route('/:forge', {
+FlowRouter.route('/forges/:forge', {
   action: ()=>{
-    BlazeLayout.render("mainLayout", {content: "forges/:forge"});
+    BlazeLayout.render("mainLayout", {content: "forges"});
   }
-})
+});
