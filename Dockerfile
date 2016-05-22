@@ -21,7 +21,7 @@ RUN bash /scripts/install_node.sh
 RUN bash /scripts/install_website.sh
 
 EXPOSE 3000
-ENV PORT 3000
+ENV PORT 80
 
 #CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]
 ENTRYPOINT bash /scripts/start.sh
