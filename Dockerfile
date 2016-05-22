@@ -20,8 +20,8 @@ RUN bash /scripts/set_locales.sh
 RUN bash /scripts/install_node.sh
 RUN bash /scripts/install_website.sh
 
-EXPOSE 80
-ENV PORT 80
+EXPOSE 3000
+ENV PORT 3000
 
 #CMD ["forever", "--minUptime", "1000", "--spinSleepTime", "1000", "meteorapp/build/bundle/main.js"]
 ENTRYPOINT bash /scripts/start.sh
