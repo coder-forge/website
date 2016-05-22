@@ -34,15 +34,38 @@
   <footer>We love Meteor</footer>
 </template>
 
-<template name="blogHome">
-  <p>This is the home page of our blog</p>
-  <p>
-    <a href="/hello-world">See Hello World Post</a>
-  </p>
-</template>
-<template name="blogPost">
-  <p>
-    <a href="/">Back</a> <br/>
-    This is a single blog post
-  </p>
+<template name="adminLayout">
+
+  <header class="container-fluid">
+
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" id="menu-toggle" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img src="images/logo-text-188x56.png" alt="CoderForge logo" title="CoderForge">
+            </a>
+          </div>
+        </div><!--/.container-fluid -->
+      </nav>
+
+    </header>
+
+    <main>
+      <div id="wrapper">
+        <div id="sidebar-wrapper">
+          {{> adminSidebar }}
+        </div>
+        <div id="page-content-wrapper">
+          {{>Template.dynamic template=content}}
+        </div>
+      </div>
+    </main>
+
+  <footer>We love Meteor</footer>
 </template>

@@ -38,3 +38,9 @@ FlowRouter.route('/forges/:forge', {
     BlazeLayout.render("mainLayout", {content: "forges"});
   }
 });
+
+FlowRouter.route('/dashboard', {
+  action: ()=>{
+    BlazeLayout.render("adminLayout", {content: "adminHome"});
+  }
+});
