@@ -14,8 +14,7 @@ RUN apt-get install curl -y \
   #no longer need curl
   && apt-get --purge autoremove curl -y
 
-RUN npm install -g forever
-
+RUN bash /meteorapp/scripts/install_node.sh
 RUN bash /meteorapp/scripts/install_website.sh
 
 EXPOSE 80
