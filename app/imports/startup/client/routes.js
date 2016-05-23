@@ -38,6 +38,13 @@ FlowRouter.route('/forges/:forge', {
     BlazeLayout.render("mainLayout", {content: "forges"});
   }
 });
+FlowRouter.route('/logout', {
+  action: ()=>{
+    Meteor.logout(()=>{
+      BlazeLayout.redirect('/login');
+    });
+  }
+});
 
 dashboard = FlowRouter.group({
   'name': 'dashboard',
@@ -46,10 +53,14 @@ dashboard = FlowRouter.group({
 });
 dashboard.route('/', {
   action: ()=>{
-    triggersEnter: [AccountsTemplates.ensureSignedIn],
     BlazeLayout.render('adminLayout', {content: "adminHome"});
   }
 });
+dashboard.route('/tools', {
+  action: ()=>{
+    BlazeLayout.render('adminLayout', {content: "adminTools"});
+  }
+})
 
 AccountsTemplates.configureRoute('signIn', {
   layoutType: 'blaze',
