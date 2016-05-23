@@ -1,3 +1,7 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+import { AccountsTemplates } from 'meteor/useraccounts:core';
+
 FlowRouter.route('/', {
   action: ()=>{
     BlazeLayout.render("mainLayout", {content: "home"});
@@ -53,12 +57,17 @@ dashboard = FlowRouter.group({
 });
 dashboard.route('/', {
   action: ()=>{
-    BlazeLayout.render('adminLayout', {content: "adminHome"});
+    BlazeLayout.render('adminLayout', {content: 'adminHome'});
   }
 });
 dashboard.route('/tools', {
   action: ()=>{
-    BlazeLayout.render('adminLayout', {content: "adminTools"});
+    BlazeLayout.render('adminLayout', {content: 'adminTools'});
+  }
+});
+dashboard.route('/users', {
+  action: ()=>{
+    BlazeLayout.render('adminLayout', {content: 'adminUsers'});
   }
 })
 

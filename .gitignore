@@ -1,5 +1,5 @@
 node_modules
 bower_components
 
-npm_debug.log
+app/npm_debug.log
 config.js
