@@ -41,6 +41,7 @@ FlowRouter.route('/forges/:forge', {
 
 dashboard = FlowRouter.group({
   'name': 'dashboard',
+  'triggersEnter': [checkLoggedIn],
   'prefix': '/dashboard'
 });
 dashboard.route('/', {
@@ -63,3 +64,9 @@ AccountsTemplates.configureRoute('signIn', {
   },
   contentRegion: 'login'
 });
+
+function checkLoggedIn (ctx, redirect) {
+  if (!Meteor.userId()) {
+    redirect('/login');
+  }
+}
