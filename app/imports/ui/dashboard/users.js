@@ -5,5 +5,7 @@ Template.adminUsers.onCreated(function adminUsersCreated(){
 });
 
 Template.adminUsers.helpers({
-  'users': Meteor.users.find({})
+  'users': ()=>{
+    return Meteor.users.find({});
+  }
 });
