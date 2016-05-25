@@ -1,3 +1,9 @@
 <template name="adminUsers">
   <p>CRUD actions for users</p>
+
+  <ul>
+    {{#each users}}
+      <li>{{_id}}</li>
+    {{/each}}
+  </ul>
 </template>
