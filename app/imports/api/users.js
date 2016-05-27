@@ -3,6 +3,6 @@
 if(Meteor.isServer){
 
   Meteor.publish('Meteor.users', function usersPublication(){
-    return Meteor.users.find({});
+    return Meteor.users.find({}, {fields: {email: 1, _id: 1}});
   });
 }
