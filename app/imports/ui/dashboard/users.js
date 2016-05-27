@@ -9,7 +9,7 @@ Template.adminUsers.helpers({
   'userList': ()=>{
     return {
       collection: Meteor.users.find({}, {transform: transformUserList}),
-      fields: ['email', '_id'],
+      fields: ['email', '_id', 'isAdmin'],
     };
   },
 });
@@ -24,6 +24,12 @@ const transformUserList = (doc)=>{
       return {
           email: doc.emails[0].address,
           _id: doc._id,
+          isAdmin: ()=>{
+            return new Spacebars.SafeString((doc.isAdmin) ?
+              '<i class="fa fa-check" aria-hidden="true"></i>' :  // check
+              '<i class="fa fa-times" aria-hidden="true"></i>'    // cross
+            );
+          },
       };
     return doc;
 }
