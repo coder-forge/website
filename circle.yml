@@ -6,3 +6,6 @@ dependencies:
   pre:
     - curl https://install.meteor.com | /bin/sh
     - npm install
+test:
+  override:
+    - npm test
