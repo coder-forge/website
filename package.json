@@ -1,0 +1,13 @@
+{
+  "name": "coder-forge",
+  "private": true,
+  "scripts": {
+    "preinstall": "cd app",
+    "start": "cd app && meteor run",
+    "test": "cd app && meteor test --once --driver-package dispatch:mocha-phantomjs"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "meteor-node-stubs": "^0.2.3"
+  }
+}
