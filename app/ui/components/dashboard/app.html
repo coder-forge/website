@@ -15,6 +15,17 @@
               <img src="/images/logo-text-188x56.png" alt="CoderForge logo" title="CoderForge">
             </a>
           </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li>{{# if currentUser}}
+                    {{currentUser.emails.[0].address}}
+                    <a href="/logout">signout</a>
+                  {{else}}
+                    logged out
+                {{/if}}
+              </li>
+            </ul>
+          </div>
         </div><!--/.container-fluid -->
       </nav>
 
