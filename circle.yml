@@ -4,6 +4,9 @@ machine:
   dependencies:
     - curl https://install.meteor.com | /bin/sh
     - npm install
+      pwd:
+        app
+
   checkout:
     post:
       - git submodule update --init
