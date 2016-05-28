@@ -1,0 +1,9 @@
+machine:
+  node:
+    version: 6.2.0
+  dependencies:
+    - curl https://install.meteor.com | /bin/sh
+    - npm install
+  checkout:
+    post:
+      - git submodule update --init
