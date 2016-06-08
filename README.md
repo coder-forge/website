@@ -37,6 +37,12 @@ cd website/app
 meteor
 ```
 
+## Testing
+From project root run:
+```bash
+npm test
+```
+
 # Status
 
 The build status for the website can be found on CircleCI [https://circleci.com/gh/coder-forge/website](https://circleci.com/gh/coder-forge/website)
