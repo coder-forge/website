@@ -1,5 +1,6 @@
-import {Users} from "../app/imports/lib/Users.js";
+import Users from "../app/imports/lib/Users.js";
 
+const expect = require('chai').expect;
 let Meteor;
 
 describe("Users", ()=>{
