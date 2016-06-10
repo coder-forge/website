@@ -1,5 +1,6 @@
-"use strict";
-import Users from '../../api/users.js';
+import Users from '../../lib/Users';
+
+const users = new Users(Meteor);
 
 Template.adminUsers.onCreated(function adminUsersCreated(){
   Meteor.subscribe('Meteor.users');
@@ -7,10 +8,8 @@ Template.adminUsers.onCreated(function adminUsersCreated(){
 
 Template.adminUsers.helpers({
   'userList': ()=>{
-    return {
-      collection: Meteor.users.find({}, {transform: transformUserList}),
-      fields: ['email', '_id', 'isAdmin'],
-    };
+      // Meteor.users.find({}, {transform: transformUserList})
+      return users.listDash();
   },
 });
 
