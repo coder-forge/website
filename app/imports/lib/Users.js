@@ -10,17 +10,17 @@
 export default class Users{
 
     constructor(Meteor){
-        this.Meteor = Meteor || import('Meteor');
+        this.Meteor = Meteor;
     }
 
     /**
      * List users for dashboard
      * @return {Object} {collection, fields}
      */
-    function listDash(){
+    listDash(){
         // Meteor.users.find({}, {transform: transformUserList})
         return {
-            collection: ['one','two'], //Meteor.users.find({}),
+            collection: this.Meteor.users.find({}, {transform: transformUserList}),
             fields: ['email', '_id', 'isAdmin'],
         };
     }
@@ -41,7 +41,7 @@ export default class Users{
  * @param  {[type]} doc [description]
  * @return {[type]}     [description]
  */
-transformUserList(doc)=>{
+const transformUserList = (doc)=>{
     if(doc.emails)
       return {
           email: doc.emails[0].address,

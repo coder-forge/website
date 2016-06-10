@@ -8,7 +8,7 @@ let Meteor;
 beforeEach((done)=>{
     Meteor = {
         users: {
-            find: null,
+            find: ()=>{return ['foo','bar']},
         },
     };
     done();
@@ -16,23 +16,22 @@ beforeEach((done)=>{
 
 describe("Users", ()=>{
 
-    it('gets list of users', (done)=>{
+    it('list of users for GET dashboard/users', (done)=>{
 
         // mock/stub out code
-        let findSpy = sinon.spy();
-        Meteor.users.find = findSpy;
-        let users = new Users(Meteor);
+        const users = new Users(Meteor);
 
         // run
-        const usersList = users.list,
+        const actual = users.listDash(),
+            expected = {
+                collection: Meteor.users.find(),
+                fields: ['email', '_id', 'isAdmin'],
+            },
             expectedParam1 = {},
             expectedParam2 = { fields: { email: 1, _id: 1, isAdmin: 1 } };
 
         // test
-        expect(findSpy.calledOnce).to.be.ok;
-        expect(findSpy.getCall(0).args[0]).to.deep.equal(expectedParam1);
-        expect(findSpy.getCall(0).args[1]).to.deep.equal(expectedParam2);
-
+        expect(actual).to.deep.equal(expected);
         done();
     });
 });
