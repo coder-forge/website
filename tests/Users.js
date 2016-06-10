@@ -1,7 +1,8 @@
 import Users from "../app/imports/lib/Users.js";
 
-const expect = require('chai').expect,
-    sinon = require('sinon');
+const expect    = require('chai').expect,
+    rewire      = require('rewire'),
+    sinon       = require('sinon');
 
 let Meteor;
 
@@ -19,7 +20,8 @@ describe("Users", ()=>{
     it('list of users for GET dashboard/users', (done)=>{
 
         // mock/stub out code
-        const users = new Users(Meteor);
+        const users = new Users(Meteor),
+            Roles = {addUsersToRoles: sinon.spy()};
 
         // run
         const actual = users.listDash(),
@@ -34,4 +36,13 @@ describe("Users", ()=>{
         expect(actual).to.deep.equal(expected);
         done();
     });
+
+    it.skip('adds admin role to a user', (done)=>{
+
+        const users = new Users(Meteor);
+
+        //users.makeAdmin('CKLjKcnNwJAHpqcTT');
+
+        done();
+    })
 });

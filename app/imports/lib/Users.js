@@ -20,9 +20,19 @@ export default class Users{
     }
 
     /**
-     * List users for dashboard
-     * @return {Object} {collection, fields}
-     */
+    * Get a list of user documents.
+    * @return {Collection} Returns a collection of documents.
+    */
+    get list(){
+
+        const users = this.Meteor.users.find({}, {fields: {email: 1, _id: 1, isAdmin: 1}});
+        return users;
+    }
+
+    /**
+    * List users for dashboard
+    * @return {Object} {collection, fields}
+    */
     listDash(){
 
         return {
@@ -31,16 +41,9 @@ export default class Users{
         };
     }
 
-    /**
-     * Get a list of user documents.
-     * @return {Collection} Returns a collection of documents.
-     */
-    get list(){
-
-        const users = this.Meteor.users.find({}, {fields: {email: 1, _id: 1, isAdmin: 1}});
-        return users;
+    makeAdmin(userId){
+        Roles.addUsersToRoles(userId, 'admin', Roles.GLOBAL_GROUP);
     }
-
 }
 
 /**
