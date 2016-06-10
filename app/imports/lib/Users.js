@@ -9,7 +9,13 @@
  */
 export default class Users{
 
+    /**
+     * Constructor.
+     * @param  {Meteor} Meteor The global `Meteor` object.
+     * @return {Object}        An object {collection, fields}
+     */
     constructor(Meteor){
+
         this.Meteor = Meteor;
     }
 
@@ -18,7 +24,7 @@ export default class Users{
      * @return {Object} {collection, fields}
      */
     listDash(){
-        // Meteor.users.find({}, {transform: transformUserList})
+
         return {
             collection: this.Meteor.users.find({}, {transform: transformUserList}),
             fields: ['email', '_id', 'isAdmin'],
@@ -30,6 +36,7 @@ export default class Users{
      * @return {Collection} Returns a collection of documents.
      */
     get list(){
+
         const users = this.Meteor.users.find({}, {fields: {email: 1, _id: 1, isAdmin: 1}});
         return users;
     }

@@ -1,9 +1,6 @@
-"use strict";
-import Users from '../../api/lib/Users';
+import Users from '../../lib/Users';
 
 const users = new Users(Meteor);
-console.log(users);
-console.log(users.listDash());
 
 Template.adminUsers.onCreated(function adminUsersCreated(){
   Meteor.subscribe('Meteor.users');
