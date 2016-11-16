@@ -2,11 +2,10 @@
   "name": "coder-forge",
   "private": true,
   "scripts": {
-    "start": "meteor run",
-    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs"
+    "start": "meteor run"
   },
   "dependencies": {
-    "bootstrap": "^3.3.6",
-    "meteor-node-stubs": "^0.2.3"
+    "meteor-node-stubs": "~0.2.0",
+    "babel-runtime": "6.18.0"
   }
 }
