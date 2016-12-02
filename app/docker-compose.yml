@@ -1,11 +1,10 @@
-coder-forge:
-  build: .
+dashboard:
+  image: coder-forge/website
   ports:
    - "80:80"
   links:
    - mongo
   environment:
-   - METEOR_ALLOW_SUPERUSER=true
    - MONGO_URL=mongodb://mongo/yourapp
    - ROOT_URL=http://yourapp.com
    - MAIL_URL=smtp://some.mailserver.com:25
