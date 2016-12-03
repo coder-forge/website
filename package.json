@@ -1,0 +1,21 @@
+{
+  "name": "coderforge.io",
+  "version": "1.0.0",
+  "description": "Coder Forge Website",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha test/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coder-forge/website.git"
+  },
+  "author": "Daithi Coombes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coder-forge/website/issues"
+  },
+  "homepage": "https://github.com/coder-forge/website#readme"
+}
