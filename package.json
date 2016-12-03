@@ -4,8 +4,10 @@
   "description": "Coder Forge Website",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "scripts": {
+    "preinstall": "npm install -g mocha",
     "test": "mocha test/**/*.test.js"
   },
   "repository": {
