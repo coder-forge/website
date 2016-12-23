@@ -5,46 +5,50 @@ This beta version can be viewed at: [http://164.132.58.15:3000](http://164.132.5
 
 You can contact us at [mailto:coderforge.dublin@gmail.com](coderforge.dublin@gmail.com)
 
-# Usage
+## Prerequisites
 
-Feel free to download this code and help to work on the site. You can view and
-report issues here: [https://github.com/coder-forge/website/issues](https://github.com/coder-forge/website/issues)
+You will need the following things properly installed on your computer.
 
-## Docker
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with NPM)
+* [Bower](https://bower.io/)
+* [Ember CLI](https://ember-cli.com/)
+* [PhantomJS](http://phantomjs.org/)
 
-The preferred method is to use docker. Instructions for installing docker can be
-found [here](https://docs.docker.com/engine/installation/). Once docker is
-installed you can run the site locally with the following commands:
-```bash
-git clone https://github.com/coder-forge/website
-cd website
-docker-compose up
-```
+## Installation
 
-Or you can run the image from the Coder Forge account at [docker hub](https://hub.docker.com/r/coderforge/website/)
-```bash
-docker pull coderforge/website
-docker run coderforge/website
-```
+* `git clone <repository-url>` this repository
+* `cd coderforge-website`
+* `npm install`
+* `bower install`
 
-## Manually
+## Running / Development
 
-The site can be run as a MeteorJS app without Docker. Installation instructions for MeteorJS
-can be found [here](https://www.meteor.com/install)
-```bash
-git clone https://github.com/coder-forge/website
-cd website/app
-meteor
-```
+* `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
 
-## Testing
-From project root run:
-```bash
-npm test
-```
+### Code Generators
 
-# Status
+Make use of the many generators for code, try `ember help generate` for more details
 
-The build status for the website can be found on CircleCI [https://circleci.com/gh/coder-forge/website](https://circleci.com/gh/coder-forge/website)
+### Running Tests
 
-License: [MIT](https://opensource.org/licenses/MIT)
+* `ember test`
+* `ember test --server`
+
+### Building
+
+* `ember build` (development)
+* `ember build --environment production` (production)
+
+### Deploying
+
+Specify what it takes to deploy your app.
+
+## Further Reading / Useful Links
+
+* [ember.js](http://emberjs.com/)
+* [ember-cli](https://ember-cli.com/)
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
