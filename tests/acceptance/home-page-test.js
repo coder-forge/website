@@ -50,24 +50,9 @@ test('header link to About', function(assert){
 });
 
 // .mircoservices-list
-test('microservice list link to Slack channel', function(assert){
+test('microservice list links', function(assert){
     visit('/');
-    click('a:contains("Slack Channel")');
     andThen(function(){
-        assert.equal(currentURL(), 'https://coderforge.slack.com');
-    });
-});
-test('microservice list link to Github channel', function(assert){
-    visit('/');
-    click('a:contains("Github Repositories")');
-    andThen(function(){
-        assert.equal(currentURL(), 'https://github.com/coder-forge');
-    });
-});
-test('microservice list link to Meetup channel', function(assert){
-    visit('/');
-    click('a:contains("CF Meetups")');
-    andThen(function(){
-        assert.equal(currentURL(), 'https://www.meetup.com/Dublin-Coder-Forge/');
+        assert.equal(find('ul#mircoservices-list li a').length, 3);
     });
 });
