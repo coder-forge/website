@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Small description for coderforge-website goes here",
   "license": "MIT",
-  "author": "",
+  "author": "Daithi Coombes",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -12,8 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/coder-forge/website.git"
   },
-  "author": "Daithi Coombes",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/coder-forge/website/issues"
   },
@@ -37,6 +35,7 @@
     "ember-cli-jshint": "^2.0.1",
     "ember-cli-qunit": "^3.0.1",
     "ember-cli-release": "^0.2.9",
+    "ember-cli-sass": "6.0.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
