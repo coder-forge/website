@@ -17,19 +17,11 @@ test('loads content', function(assert){
     andThen(function(){
 
         // test header
-        assert.equal(find('#header').length, 1, 'load header container element');
-        assert.equal(find('#logo #header').length, 1, 'load header logo');
-        assert.equal(find('.pages-list').length, 3, 'load header pages links');
+        assert.equal(find('nav#header').length, 1, 'load header container element');
+        assert.equal(find('nav#header img#logo').length, 1, 'load header logo');
+        assert.equal(find('ul#pages-list > li').length, 3, 'load header pages links');
         // test links to micro services
-        assert.equal(find('.mircoservices-list').length, 3, 'load microservices list');
-    });
-});
-
-test('logo link to homepage', function(assert){
-    visit('/');
-    click('a #logo #header');
-    andThen(function(){
-        assert.equal(currentURL(), '/', 'logo links to homepage');
+        assert.equal(find('ul#mircoservices-list > li').length, 3, 'load microservices list');
     });
 });
 
