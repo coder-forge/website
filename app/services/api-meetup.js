@@ -5,7 +5,7 @@ export default Ember.Service.extend({
     config: null,
 
     init(){
-        this.config = config.APP.meetup;
+        this.config = config.APP.keys.meetup.key;
     }
 
 

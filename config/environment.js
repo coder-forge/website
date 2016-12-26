@@ -1,5 +1,7 @@
 /* jshint node: true */
 
+const APP = require('./APP');
+
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'coderforge-website',
@@ -17,10 +19,7 @@ module.exports = function(environment) {
       }
     },
 
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
-    }
+    APP: APP(environment),
   };
 
   if (environment === 'development') {
@@ -41,9 +40,6 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
 
-    ENV.APP.meetup = {
-        key: '1234567890',
-    };
   }
 
   if (environment === 'production') {
