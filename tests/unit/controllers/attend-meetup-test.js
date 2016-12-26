@@ -5,7 +5,6 @@ moduleFor('controller:attend-meetup', 'Unit | Controller | attend meetup', {
   // needs: ['controller:foo']
 });
 
-// Replace this with your real tests.
 test('it renders one meetup', function(assert) {
   let controller = this.subject();
 });

@@ -40,6 +40,10 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    ENV.APP.meetup = {
+        key: '1234567890',
+    };
   }
 
   if (environment === 'production') {
