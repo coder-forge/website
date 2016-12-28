@@ -1,1 +1,16 @@
-{{outlet}}
+<h1>List of venues</h1>
+
+<ul>
+    {{#each model as |event|}}
+        <li>
+            <dl>
+                <dt>Name</dt>
+                <dd>{{event.name}}</dd>
+                <dt>Created</dt>
+                <dd>{{event.created}}</dd>
+                <dt>Time</dt>
+                <dd>{{event.time}}</dd>
+            </dl>
+        </li>
+    {{/each}}
+</ul>
