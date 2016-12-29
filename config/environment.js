@@ -1,7 +1,5 @@
 /* jshint node: true */
 
-const APP = require('./APP');
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'coderforge-website',
@@ -19,7 +17,14 @@ module.exports = function(environment) {
       }
     },
 
-    APP: APP(environment),
+    APP: function(){
+        try{
+            let APP = require('./APP');
+            return APP(environment);
+        }catch(e){
+            return {};
+        }
+    }(),
   };
 
   if (environment === 'development') {
