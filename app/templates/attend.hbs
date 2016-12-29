@@ -1,15 +1,17 @@
 <h1>List of venues</h1>
 
-<ul>
+<ul id="event-list">
     {{#each model as |event|}}
-        <li>
+        <li class="event">
             <dl>
-                <dt>Name</dt>
-                <dd>{{event.name}}</dd>
-                <dt>Created</dt>
-                <dd>{{event.created}}</dd>
-                <dt>Time</dt>
-                <dd>{{event.time}}</dd>
+                <dt class="name">Name</dt>
+                <dd class="name">{{event.name}}</dd>
+                <dt class="host">Host</dt>
+                <dd class="host">{{event.venue.name}}</dd>
+                <dt class="address">Address</dt>
+                <dd class="address">{{event.venue.address_1}}, {{event.venue.city}}</dd>
+                <dt class="time">Time</dt>
+                <dd class="time">{{event.time}}</dd>
             </dl>
         </li>
     {{/each}}
