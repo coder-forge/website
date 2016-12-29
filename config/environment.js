@@ -17,14 +17,7 @@ module.exports = function(environment) {
       }
     },
 
-    APP: function(){
-        try{
-            let APP = require('./APP');
-            return APP(environment);
-        }catch(e){
-            return {};
-        }
-    }(),
+    APP: {},
   };
 
   if (environment === 'development') {
