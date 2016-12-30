@@ -2,7 +2,7 @@
 machine:
 
   timezone:
-    Eire/Dublin # Set the timezone
+    Europe/Dublin # Set the timezone
 
 ## Customize dependencies
 dependencies:
