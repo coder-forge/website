@@ -1,0 +1,10 @@
+## Customize the test machine
+machine:
+
+  timezone:
+    Ireland/Dublin # Set the timezone
+
+## Customize dependencies
+dependencies:
+  pre:
+    - npm install -g bower
