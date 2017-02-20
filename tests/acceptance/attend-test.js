@@ -14,5 +14,6 @@ test('visiting /attend', function(assert) {
         assert.equal(find('ul#event-list li:first dt.address:Contains("Address")').length, 1);
         assert.equal(find('ul#event-list li:first dt.time:Contains("Time")').length, 1);
         assert.equal(find('ul#event-list li.event').length, 20);
+        assert.equal(find('ul#event-list li:first dt.latlon:Contains("Lat/Lon")').length, 1);
     });
 });
