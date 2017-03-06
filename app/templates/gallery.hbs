@@ -1,0 +1,9 @@
+{{outlet}}
+
+{{#justified-gallery}}
+  {{#each images as |image|}}
+    <a href="{{image.src}}">
+      <img src="{{image.thumb}}" alt="{{image.title}}">
+    </a>
+  {{/each}}
+{{/justified-gallery}}

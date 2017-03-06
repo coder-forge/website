@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('organise');
   this.route('about');
   this.route('attend');
+  this.route('gallery');
 });
 
 export default Router;
