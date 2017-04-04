@@ -3,6 +3,7 @@
 <ul id="event-list">
     {{#each model as |event|}}
         <li class="event">
+            <img src="" width="150" height="150">
             <dl>
                 <dt class="name">Name</dt>
                 <dd class="name">{{event.name}}</dd>
@@ -12,6 +13,8 @@
                 <dd class="address">{{event.venue.address_1}}, {{event.venue.city}}</dd>
                 <dt class="time">Time</dt>
                 <dd class="time">{{event.time}}</dd>
+                <dt class="latlon">Lat/Lon</dt>
+                <dd class="latlon">{{event.venue.lat}}, {{event.venue.lon}}</dd>
             </dl>
         </li>
     {{/each}}
