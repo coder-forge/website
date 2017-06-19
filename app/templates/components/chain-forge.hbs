@@ -1,0 +1,37 @@
+{{#if web3Error}}
+    <p style="color: red">{{web3Error}}</p>
+{{/if}}
+
+{{#if connected}}
+
+    <h4>Connected</h4>
+    <p>Address: {{address}}</p>
+
+{{else}}
+
+<p>Current Forge's</p>
+<p>Click address to donate...</p>
+<ul>
+<li>
+    <a href="">0x01f79fe83d5b36d7708001aa58f31f0ef7ec6b4a</a> Dublin
+</li><li>
+    <a href="">0x66562a5a2cf158c353de4f4611d963ccb09cc8c6</a> London
+</li><li>
+    <a href="">0x3fec0193757741def9c4c51ab481fb2e147d8082</a> Cairo
+</li><li>
+    <a href="">0x773a06aac1e655f89bb172b9eb7ab20833b41494</a> Limerick
+</li><li>
+    <a href="">0x2fa16e502bf68c46036037c27898fcb47a85cb03</a> Peters Garage
+</li><li>
+    <a href="">0x3b9c7f6b2e3aa7546a12d48bd578d4d09fb71a28</a> Cork
+</li><li>
+    <a href="">0xa99d357035e00513cd4c0ab02bb21f945e3b38d8</a> Belfast
+</li><li>
+    <a href="">0x7176e797c834af98f88c056495abd3d5e17c77d7</a> Janes Workshop
+</li><li>
+    <a href="">0x3f704604b26fe77d133e62fcd430607a1b4ca08e</a> New York
+</li><li>
+    <a href="">0x8bc32f435f59cdbc751dedd75cc1cb49a739d374</a> Beijing
+</li>
+</ul>
+{{/if}}

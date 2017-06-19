@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    web3Provider: 'http://localhost:8545',
     modulePrefix: 'coderforge-website',
     environment: environment,
     rootURL: '/',
