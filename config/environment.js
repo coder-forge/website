@@ -1,4 +1,4 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function(environment) {
   var ENV = {
@@ -17,7 +17,10 @@ module.exports = function(environment) {
       }
     },
 
-    APP: {},
+    APP: {
+      // Here you can pass flags/options to your application instance
+      // when it is created
+    }
   };
 
   if (environment === 'development') {
@@ -37,7 +40,6 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
-
   }
 
   if (environment === 'production') {
