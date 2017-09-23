@@ -6,6 +6,7 @@ WORKDIR /src
 ADD . /src
 
 RUN npm install
+RUN bower install
 
 EXPOSE 3000
 
