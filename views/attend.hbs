@@ -1,0 +1,16 @@
+<ul id="event-list">
+  {{#each model}}
+    <li class="event">
+        <dl>
+            <dt class="name">Name</dt>
+            <dd class="name">{{this.name}}</dd>
+            <dt class="host">Host</dt>
+            <dd class="host">{{this.venue.name}}</dd>
+            <dt class="address">Address</dt>
+            <dd class="address">{{this.venue.address_1}}</dd>
+            <dt class="time">Time</dt>
+            <dd class="time">{{this.time}}</dd>
+        </dl>
+    </li>
+  {{/each}}
+</ul>
