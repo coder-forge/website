@@ -1,7 +1,0 @@
-{
-  "name": "coderforge-website",
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "Justified-Gallery": "~3.6.1"
-  }
-}
