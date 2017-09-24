@@ -1,0 +1,28 @@
+<script src="/bower_components/shufflejs/dist/shuffle.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+var Shuffle = window.Shuffle,
+    element = document.querySelector('.my-shuffle-container'),
+    sizer = element.querySelector('.my-sizer-element');
+
+var suffleInstance = new Shuffle(element, {
+  itemSelector: '.picture-item',
+  sizer: sizer,
+});
+</script>
+
+<div class="row my-shuffle-container">
+
+    {{#each model.data}}
+      <figure class="col-sm-3 picture-item" data-groups='["animal"]' data-date-created="2016-08-12" data-title="{{this.name}}">
+        <div class="aspect aspect--16x9">
+          <div class="aspect__inner">
+            <img src="{{this.link}}" alt="{{this.text}}"/>
+          </div>
+        </div>
+        <figcaption><a href="{{this.link}}">{{this.name}}</a></figcaption>
+      </figure>
+    {{/each}}
+    <div class="col-sm-3 my-sizer-element"></div>
+
+</div>

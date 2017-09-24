@@ -1,0 +1,6 @@
+figure.picture-item {
+  border: 1px solid;
+  padding: 10px;
+  margin-bottom: 10px;
+  min-height: 200px;
+}

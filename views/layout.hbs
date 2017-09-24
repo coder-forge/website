@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coder Forge - {{title}}</title>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    {{#if vendor.styles.length}}
+      {{#each vender.styles}}
+        <link ref="stylesheet" href="{{this}}"/>
+      {{/each}}
+    {{/if}}
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/{{namespace}}.css' />
+  </head>
+  <body>
+    <!-- Static navbar -->
+    <nav id="header" class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand active">
+            <img id="logo" src="/images/logo-title.svg" alt="Coder Forge Logo" title="Coder Forge"/>
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul id="pages-list" class="nav navbar-nav">
+            <li><a href="/tools">Tools</a></li>
+            <li><a href="/organise">Organise</a></li>
+            <li><a href="/attend">Attend</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div><!--/.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+
+      <div class="page-header">
+        <h1>Coder Forge  <small>A place to learn how to forge out code, to smyth out patterns and designs.</small></h1>
+      </div>
+
+      {{{body}}}
+
+      <div id="mircoservices-list" class="row">
+        <div class="col-xs-4">
+          <a href="https://coderforge.slack.com">
+            <img src="/images/logo.slack.png" width="120"/><br/>
+            Slack Channel
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://github.com/coder-forge">
+            <img src="/images/logo.github.png" width="120"/><br/>
+            Github Repositories
+          </a>
+        </div>
+        <div class="col-xs-4">
+          <a href="https://www.meetup.com/Dublin-Coder-Forge">
+            <img src="/images/logo.meetup.svg" width="120"/><br/>
+            CF Meetups
+          </a>
+        </div>
+      </ul>
+
+
+    </div>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    {{#if vendor.scripts.length}}
+      {{#each vender.scripts}}
+        <script src="{{this}}" type="text/javascript"></script> 
+      {{/each}}
+    {{/if}}
+  </body>
+</html>
