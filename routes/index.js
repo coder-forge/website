@@ -29,7 +29,14 @@ router.get('/attend', function(req, res){
 });
 
 router.get('/gallery', function(req, res){
-  res.render('gallery', {title: 'Coder Forge - Galler', namespace: 'gallery'});
+  res.render('gallery', {
+    title: 'Coder Forge - Galler',
+    namespace: 'gallery',
+    vendor: {
+      scripts: ['/bower_components/lightbox2/dist/js/lightbox.min.js'],
+      styles: ['/bower_components/lightbox2/dist/css/lightbox.min.css'],
+    },
+  });
 });
 
 router.get('/organise', function(req, res){

@@ -3,6 +3,11 @@
   <head>
     <title>Coder Forge - {{title}}</title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    {{#if vendor.styles.length}}
+      {{#each vender.styles}}
+        <link ref="stylesheet" href="{{this}}"/>
+      {{/each}}
+    {{/if}}
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel='stylesheet' href='/stylesheets/{{namespace}}.css' />
   </head>
@@ -66,5 +71,11 @@
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    {{#if vendor.scripts.length}}
+      {{#each vender.scripts}}
+        <script src="{{this}}" type="text/javascript"></script> 
+      {{/each}}
+    {{/if}}
   </body>
 </html>
