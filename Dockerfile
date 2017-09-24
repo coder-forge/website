@@ -1,8 +1,15 @@
-FROM daithi/docker-emberjs
+FROM node:8.5.0-stretch
 
 MAINTAINER "Daithi Coombes" <webeire@gmail.com>
 
-RUN npm install
-RUN bower install
+WORKDIR /usr/src/app
+COPY package.json package-lock.json ./
+COPY bower.json .bowerrc ./
 
-CMD ["ember", "serve"]
+RUN npm install
+RUN node node_modules/.bin/bower install --allow-root
+
+COPY . .
+EXPOSE 3000
+
+CMD ["npm", "start"]
