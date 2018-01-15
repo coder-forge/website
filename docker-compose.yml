@@ -5,3 +5,11 @@ services:
     build: .
     ports:
       - "80:3000"
+
+  forge:
+    image: atmoz/sftp
+    volumes:
+      - /host/upload:/home/foo/upload
+    ports:
+      - "2222:22"
+    command: foo:pass:1001
