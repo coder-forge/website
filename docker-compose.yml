@@ -1,7 +1,21 @@
-version: '2'
+version: '3'
 
 services:
   web:
     build: .
+
+  nginx:
+    image: nginx
+    hostname: coderforge-nginx
+    container_name: coderforge-nginx
     ports:
       - "80:3000"
+    volumes:
+      - ./config/nginx/certs/nginx-selfsigned.crt:/etc/nginx/nginx-selfsigned.crt
+      - ./config/nginx/certs/nginx-selfsigned.key:/etc/nginx/nginx-selfsigned.key
+    networks:
+      - parity_net
+    links:
+      - web
+    depends_on:
+      - web

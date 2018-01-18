@@ -1,15 +1,15 @@
-FROM node:8.5.0-stretch
+FROM mhart/alpine-node:latest
 
-MAINTAINER "Daithi Coombes" <webeire@gmail.com>
+RUN apk add --no-cache git python make gcc g++
 
-WORKDIR /usr/src/app
-COPY package.json package-lock.json ./
-COPY bower.json .bowerrc ./
+WORKDIR /app
+COPY package.json .
+COPY package-lock.json .
+COPY yarn.lock .
 
-RUN npm install
-RUN node node_modules/.bin/bower install --allow-root
+RUN yarn install
 
 COPY . .
-EXPOSE 3000
 
+EXPOSE 3000
 CMD ["npm", "start"]
