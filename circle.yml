@@ -1,0 +1,16 @@
+## Customize the test machine
+machine:
+
+  timezone:
+    Europe/Dublin # Set the timezone
+
+## Customize dependencies
+dependencies:
+  pre:
+    - npm install -g bower
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ssh -p 7826 -t circleci@137.74.112.216 'bash -i -c "~/website/vendor/deploy_master.sh"'

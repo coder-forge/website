@@ -1,8 +1,24 @@
-version: "2"
+version: '3'
+
 services:
-    web:
-      build: .
-      ports: ["80:3000"]
-      volumes:
-        - .:/src
-        - /src/node_modules
+  web:
+    build: .
+    hostname: coderforge-web
+    container_name: coderforge-web
+
+  nginx:
+    image: nginx
+    hostname: coderforge-nginx
+    container_name: coderforge-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./config/nginx/website.conf:/etc/nginx/nginx.conf
+      - ./logs:/var/log/coderforge.io
+      - ./config/nginx/certs/cert_chain.crt:/etc/ssl/cert_chain.crt
+      - ./config/nginx/certs/coderforge_io.key:/etc/ssl/coderforge_io.key
+    links:
+      - web
+    depends_on:
+      - web

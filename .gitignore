@@ -2,3 +2,5 @@ node_modules
 bower_components
 npm-debug.log
 config.js
+config/nginx/certs
+logs/*.log

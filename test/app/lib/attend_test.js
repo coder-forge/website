@@ -22,7 +22,6 @@ describe('Attend', function(){
 
     attend.getMeetupEvents()
       .then(function(actual){
-        //helper.writeFixture(events, 'test/app/lib/fixtures/attend.get.expected.json');
         assert.deepEqual(actual, require('./fixtures/attend.get.expected.json'));
         done();
       })

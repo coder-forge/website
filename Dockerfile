@@ -1,13 +1,15 @@
-FROM node
-MAINTAINER webeire@gmail.com
+FROM mhart/alpine-node:latest
 
-RUN mkdir /src
-WORKDIR /src
-ADD . /src
+RUN apk add --no-cache git python make gcc g++
 
-RUN npm install
-RUN bower install
+WORKDIR /app
+COPY package.json .
+COPY package-lock.json .
+COPY yarn.lock .
+
+RUN yarn install
+
+COPY . .
 
 EXPOSE 3000
-
-ENTRYPOINT ["npm", "start"]
+CMD ["npm", "start"]
